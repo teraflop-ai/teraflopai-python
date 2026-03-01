@@ -8,7 +8,10 @@ requires-python = ">=3.9"
 authors = [
 { name = "Teraflop AI", email = "enrico@teraflop.ai" },
 ]
-dependencies = []
+dependencies = [
+    "httpx[http2]>=0.28.1",
+    "python-dotenv>=1.2.1",
+]
 classifiers = [
   "Typing :: Typed",
   "Intended Audience :: Developers",
