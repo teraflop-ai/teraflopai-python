@@ -12,4 +12,4 @@ client = TeraflopAI(api_key=api_key, url=url)
 
 results = client.search("City of Houma")
 
-print(results["results"][0])
+print(results["results"])
