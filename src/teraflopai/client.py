@@ -4,8 +4,8 @@ class TeraflopAI:
     def __init__(self, api_key: str, url: str):
         self.url = url
         self.client = httpx.Client(
-            http2=True,
-            timeout=30.0,
+            http2 = True,
+            timeout = 30.0,
             headers = {"Authorization": f"Bearer {api_key}"}
         )
 
