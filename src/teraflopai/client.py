@@ -10,12 +10,12 @@ class TeraflopAI:
         )
 
     def search(self, query: str):
-        payload = {"query": f"{query}"}
-        result = self.client.post(self.url, json=payload)
-        result.raise_for_status()
-        return result.json()
+        return self.post(query)
     
     def segment(self, query: str):
+        return self.post(query)
+    
+    def post(self, query: str):
         payload = {"query": f"{query}"}
         result = self.client.post(self.url, json=payload)
         result.raise_for_status()
