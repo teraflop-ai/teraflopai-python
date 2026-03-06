@@ -14,14 +14,11 @@ export TERAFLOPAI_API_KEY="your_api_key_here"
 
 ### Search Engine API
 ```python
-import os
 from teraflopai import TeraflopAI
-
-api_key = os.environ.get("TERAFLOPAI_API_KEY")
 
 url = "https://api.caselaw.teraflopai.com/v1/search/free"
 
-client = TeraflopAI(api_key=api_key, url=url)
+client = TeraflopAI(url=url)
 
 results = client.search("City of Houma")
 
@@ -30,14 +27,11 @@ print(results["results"])
 
 ### Segmentation API
 ```python
-import os
 from teraflopai import TeraflopAI
-
-api_key = os.environ.get("TERAFLOPAI_API_KEY")
 
 url = "https://api.segmentation.teraflopai.com/v1/segmentation/free"
 
-client = TeraflopAI(api_key=api_key, url=url)
+client = TeraflopAI(url=url)
 
 text = """
 UNITED STATES of America, Appellee, v. Daniel Dee VEON, Appellant.

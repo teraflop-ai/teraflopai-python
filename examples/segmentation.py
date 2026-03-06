@@ -1,14 +1,8 @@
-import os
-from dotenv import load_dotenv
 from teraflopai import TeraflopAI
-
-load_dotenv()
-
-api_key = os.environ.get("TERAFLOPAI_API_KEY")
 
 url = "https://api.segmentation.teraflopai.com/v1/segmentation/free"
 
-client = TeraflopAI(api_key=api_key, url=url)
+client = TeraflopAI(url=url)
 
 text = """
 UNITED STATES of America, Appellee, v. Daniel Dee VEON, Appellant.

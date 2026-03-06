@@ -2,7 +2,7 @@ import httpx
 import os
 
 class TeraflopAI:
-    def __init__(self, api_key: str, url: str):
+    def __init__(self, url: str, api_key: str | None = None, ):
         self.url = url
         self.api_key = api_key or os.getenv("TERAFLOPAI_API_KEY")
         self.client = httpx.Client(
