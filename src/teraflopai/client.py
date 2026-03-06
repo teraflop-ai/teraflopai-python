@@ -1,12 +1,14 @@
 import httpx
+import os
 
 class TeraflopAI:
     def __init__(self, api_key: str, url: str):
         self.url = url
+        self.api_key = api_key or os.getenv("TERAFLOPAI_API_KEY")
         self.client = httpx.Client(
             http2 = True,
             timeout = 30.0,
-            headers = {"Authorization": f"Bearer {api_key}"}
+            headers = {"Authorization": f"Bearer {self.api_key}"}
         )
 
     def search(self, query: str):
