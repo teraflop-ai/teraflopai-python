@@ -1,5 +1,6 @@
 import httpx
 import os
+from typing import List
 
 class TeraflopAI:
     def __init__(self, url: str, api_key: str | None = None, ):
@@ -17,8 +18,8 @@ class TeraflopAI:
     def segment(self, query: str):
         return self.post(query)
     
-    def embeddings(self, query: str, model: str):
-        payload = {"input": f"{query}", "model": model}
+    def embeddings(self, query: List[str] | str, model: str):
+        payload = {"input": query, "model": model}
         result = self.client.post(self.url, json=payload)
         result.raise_for_status()
         return result.json()
