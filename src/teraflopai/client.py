@@ -17,6 +17,12 @@ class TeraflopAI:
     def segment(self, query: str):
         return self.post(query)
     
+    def embeddings(self, query: str, model: str):
+        payload = {"input": f"{query}", "model": model}
+        result = self.client.post(self.url, json=payload)
+        result.raise_for_status()
+        return result.json()
+    
     def post(self, query: str):
         payload = {"query": f"{query}"}
         result = self.client.post(self.url, json=payload)
